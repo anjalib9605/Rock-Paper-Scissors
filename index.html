@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rock Paper Scissors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link href="r-p-s.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="full-container">
+      <h1>ROCK PAPER SCISSORS</h1>
+      <div class="btn-container">
+        <button class="btn" onclick="userMove('rock')">✊🏼</button>
+        <button class="btn" onclick="userMove('paper')">✋🏼</button>
+        <button class="btn" onclick="userMove('scissors')">✌🏼</button>
+      </div>
+
+      <div class="result-container">
+        <h2 id="result"></h2>
+      </div>
+
+      <div class="points-container">
+      <h2>Points :</h2>
+      <h2 id="points">0</h2>
+      </div>
+
+      <button class="reset" onclick="reset()">RESET</button>
+    </div>
+
+    <script src="r-p-s.js">
+    </script>
+  </body>
+</html>

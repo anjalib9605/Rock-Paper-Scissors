@@ -1,0 +1,129 @@
+@media(max-width: 701px) {
+        .full-container{
+          width: 90vw;
+          height: 100vh;
+          overflow: scroll;
+        }
+      }
+      @media(max-width: 350px){
+        .full-container{
+          width: 90vw;
+          height: 100vh;
+          overflow: auto;
+        }
+        
+        .btn{
+          padding: 12px;
+          height: 10px;
+          font-size: 16px;
+          margin: 1px;
+        }
+        .btn-container{
+          width: 50%;
+        }
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color:#4a2c1b;
+        font-family: 'Montserrat', sans-serif;
+
+        overflow: hidden;
+      }
+
+      .full-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90vw;
+        max-width: 350px;
+        min-width: 330;
+        background-color: rgb(246, 238, 215);
+        padding: 10px 10px 20px 10px;
+        border-radius: 20px;
+      }
+
+      h1 {
+        font-size: 48px;
+        text-align: center; 
+        color: #4a2c1b;
+      }
+
+      .btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 50px;
+        border-style: solid;
+        background-color: rgb(66, 30, 3);
+        font-size: 30px;
+        margin-right: 12px;
+        cursor: pointer;
+        min-width: 50px;
+        transition: opacity 0.2s;
+      }
+      .btn:hover{
+        opacity: 0.9;
+      }
+      .btn:active{
+        opacity: 0.8;
+      }
+      .btn-container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        width: 80%;
+      }
+
+      #result{
+        margin-top: 30px;
+      }
+      
+      #points{
+        padding: 10px 12px 10px 12px;
+        background-color: rgb(66, 30, 3);
+        color: rgb(242, 223, 189);
+        border-radius: 25px;
+      }
+      .points-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 10px 0px 10px;
+      }
+
+      .reset{
+        padding: 10px;
+        height: 50px;
+        border-radius: 20px;
+        border: none;
+        font-size: 25px;
+        font-weight: 700;
+        background-color: rgb(66, 30, 3);
+        color: rgb(246, 238, 215);
+        margin-top: 20px;
+        width: 90%;
+        min-width: 120px;
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+      .reset:hover{
+        opacity: 0.9;
+      }
+      .reset:active{
+        opacity: 0.8;
+      }
+
+      .result-container, .points-container{
+        background-color: rgb(242, 223, 189);
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.15),
+                    -2px -2px 2px rgba(0,0,0,0.15);
+        width: 80%;
+        min-width: 130px;
+        margin-top: 20px;
+        padding-left: 10px;
+      }
