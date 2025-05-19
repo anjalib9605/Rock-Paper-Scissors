@@ -1,4 +1,6 @@
-let score=0;
+let winCount=0;
+let tieCount=0;
+let loseCount=0;
 
       function computerMove() {
         const randNum= Math.random();
@@ -19,27 +21,47 @@ let score=0;
         const compMove= computerMove();
         
         if (compMove===userChoice) {
-          updatePoints(1)
-          document.getElementById('result').textContent= `Computer also picked ${compMove}. It's a tie. You got 1 point!`;
+          resultType='tieType';
+          updatePoints()
+          document.getElementById('result-statement').textContent= `Computer also picked ${compMove}. It's a tie.`;
+
         } else if (
           (userChoice==='rock' && compMove==='scissors') ||
           (userChoice==='paper' && compMove==='rock') ||
           (userChoice==='scissors' && compMove==='paper')
         ) {
-          updatePoints(2)
-          document.getElementById('result').textContent= `Computer picked ${compMove}. You won 2 points!`;
+          resultType='winType';
+          updatePoints()
+          document.getElementById('result-statement').textContent= `Computer picked ${compMove}. You won!`;
+
         } else {
-          document.getElementById('result').textContent= `Computer picked ${compMove}. You lose.`;
+          resultType='loseType';
+          updatePoints()
+          document.getElementById('result-statement').textContent= `Computer picked ${compMove}. You lose.`;
         }
       }
 
-      function updatePoints(pointNum) {
-        score+=pointNum;
-        document.getElementById('points').textContent= score;
+     function updatePoints() {
+      if (resultType==='winType') {
+        winCount++;
+        document.getElementById('win').textContent=winCount;
+      } else if(resultType==='tieType'){
+        tieCount++;
+        document.getElementById('tie').textContent=tieCount;
+      } else {
+        loseCount++;
+        document.getElementById('lose').textContent=loseCount;
       }
+     }
 
       function reset() {
-        score=0;
-        document.getElementById('points').textContent= score;
-        document.getElementById('result').textContent= 'Points reset';
+        winCount=0;
+        tieCount=0;
+        loseCount=0;
+
+        document.getElementById('win').textContent= winCount;
+        document.getElementById('tie').textContent= tieCount;
+        document.getElementById('lose').textContent= loseCount;
+
+        document.getElementById('result-statement').textContent= 'Points reset';
       }
