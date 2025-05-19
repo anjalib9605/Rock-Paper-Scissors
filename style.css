@@ -7,6 +7,10 @@
       }
       @media(max-width: 350px){
         .full-container{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-top: 50%;
           width: 90vw;
           height: 100vh;
           overflow: auto;
@@ -79,15 +83,18 @@
         width: 80%;
       }
 
-      #result{
+      #result-statement{
         margin-top: 30px;
       }
       
-      #points{
+      .the-result{
         padding: 10px 12px 10px 12px;
         background-color: rgb(66, 30, 3);
         color: rgb(242, 223, 189);
         border-radius: 25px;
+      }
+      .result-title{
+        font-weight: bold;
       }
       .points-container{
         display: flex;
