@@ -7,9 +7,6 @@
       }
       @media(max-width: 350px){
         .full-container{
-          display: flex;
-          justify-content: center;
-          align-items: center;
           width: 90vw;
           height: 100vh;
           overflow: auto;
