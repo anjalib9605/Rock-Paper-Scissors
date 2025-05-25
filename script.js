@@ -11,11 +11,11 @@ function computerMove() {
   let compMove= '';
 
   if (randNum<1/3) {
-    compMove='rock';
+    compMove='✊🏼';
   } else if (randNum<2/3){
-    compMove='paper';
+    compMove='✋🏼';
   } else{
-    compMove='scissors';
+    compMove='✌🏼';
   }
 
   return compMove;
@@ -27,40 +27,43 @@ function userMove(userChoice) {
   if (compMove===userChoice) {
     resultType='tieType';
     updatePoints()
-    document.getElementById('result-statement').textContent= `Computer also picked ${compMove}. It's a tie.`;
+    document.getElementById('result-statement').textContent= `You:${userChoice} Computer: ${compMove}
+It's a Tie.`;
 
   } else if (
-    (userChoice==='rock' && compMove==='scissors') ||
-    (userChoice==='paper' && compMove==='rock') ||
-    (userChoice==='scissors' && compMove==='paper')
+    (userChoice==='✊🏼' && compMove==='✌🏼') ||
+    (userChoice==='✋🏼' && compMove==='✊🏼') ||
+    (userChoice==='✌🏼' && compMove==='✋🏼')
   ) {
     resultType='winType';
     updatePoints()
-    document.getElementById('result-statement').textContent= `Computer picked ${compMove}. You won!`;
+    document.getElementById('result-statement').textContent= `You:${userChoice} Computer: ${compMove}
+You win!`;
 
   } else {
     resultType='loseType';
     updatePoints()
-    document.getElementById('result-statement').textContent= `Computer picked ${compMove}. You lose.`;
+    document.getElementById('result-statement').textContent= `You:${userChoice} Computer: ${compMove}
+You lose.`;
   }
 }
 
 function updatePoints() {
-if (resultType==='winType') {
-  winCount++;
-  localStorage.setItem('win-count', JSON.stringify(winCount));
-  document.getElementById('win').textContent=winCount;
+  if (resultType==='winType') {
+    winCount++;
+    localStorage.setItem('win-count', JSON.stringify(winCount));
+    document.getElementById('win').textContent=winCount;
 
-} else if(resultType==='tieType'){
-  tieCount++;
-  localStorage.setItem('tie-count', JSON.stringify(tieCount));
-  document.getElementById('tie').textContent=tieCount;
-  
-} else {
-  loseCount++;
-  localStorage.setItem('lose-count', JSON.stringify(loseCount));
-  document.getElementById('lose').textContent=loseCount;
-}
+  } else if(resultType==='tieType'){
+    tieCount++;
+    localStorage.setItem('tie-count', JSON.stringify(tieCount));
+    document.getElementById('tie').textContent=tieCount;
+    
+  } else {
+    loseCount++;
+    localStorage.setItem('lose-count', JSON.stringify(loseCount));
+    document.getElementById('lose').textContent=loseCount;
+  }
 }
 
 function reset() {
